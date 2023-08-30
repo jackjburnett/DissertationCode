@@ -1,0 +1,6 @@
+Server		trumpet.db.elephantsql.com (trumpet-01)
+Region		amazon-web-services::eu-west-1
+Username	ajsvetdr
+Database	ajsvetdr
+Password	NTNKwGRq7nhd0LmoOKv2YDTtB3iFQKAy 
+URL		postgres://ajsvetdr:NTNKwGRq7nhd0LmoOKv2YDTtB3iFQKAy@trumpet.db.elephantsql.com/ajsvetdr
