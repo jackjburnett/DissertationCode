@@ -30,7 +30,8 @@ class MoodSelfReport : AppCompatActivity() {
             if(checkForm()){
                 // Initialises values of the current selections, then passes it to the MainActivity with the name 'result' as MainActivity is started.
                 val intent = Intent(this, MainActivity::class.java)
-                val result = checkSelections()
+                var result = checkSelections()
+                result += java.sql.Timestamp(System.currentTimeMillis())
                 intent.putExtra("result", result)
                 startActivity(intent)
             }else{
