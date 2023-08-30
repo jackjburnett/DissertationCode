@@ -1,0 +1,147 @@
+<xs:schema attributeFormDefault="unqualified"
+elementFormDefault="qualified" 
+xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="SensingData" type="SensingDataType"/>
+  <xs:complexType name="UserDetailsType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="Sex"/>
+        <xs:attribute type="xs:string" name="Gender"/>
+        <xs:attribute type="xs:byte" name="Age"/>
+        <xs:attribute type="xs:string" name="Ethnicity"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="AppUsageType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="PackageName" 
+        use="required"/>
+        <xs:attribute type="xs:string" name="AppName" 
+        use="required"/>
+        <xs:attribute type="xs:time" name="TimeOpened" 
+        use="required"/>
+        <xs:attribute type="xs:time" name="TimeClosed" 
+        use="required"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="GPSLogType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:time" name="Time" 
+        use="required"/>
+        <xs:attribute type="xs:float" name="lat" 
+        use="required"/>
+        <xs:attribute type="xs:float" name="lon" 
+        use="required"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="ActivityDetailsType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:time" name="StartTime" 
+        use="required"/>
+        <xs:attribute type="xs:time" name="EndTime" 
+        use="required"/>
+        <xs:attribute type="xs:float" name="Intensity"
+        use="optional"/>
+        <xs:attribute type="xs:byte" name="Heartrate" 
+        use="optional"/>
+        <xs:attribute type="xs:string" name="notes" 
+        use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="PhoneDetailsType">
+    <xs:sequence>
+      <xs:element type="xs:string" name="Wi-FiConnection" 
+      minOccurs="0"/>
+      <xs:element type="xs:string" name="BluetoothConnection" 
+      minOccurs="0"/>
+    </xs:sequence>
+    <xs:attribute type="xs:time" name="Time" 
+    use="required"/>
+    <xs:attribute type="xs:byte" name="BatteryLevel" 
+    use="required"/>
+  </xs:complexType>
+  <xs:complexType name="CommunicationLogType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:int" name="CallerID" 
+        use="required"/>
+        <xs:attribute type="xs:string" name="Context" 
+        use="required"/>
+        <xs:attribute type="xs:time" name="StartTime" 
+        use="required"/>
+        <xs:attribute type="xs:time" name="EndTime" 
+        use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="PHQ-9Type">
+    <xs:sequence>
+      <xs:element type="xs:byte" name="Q1"/>
+      <xs:element type="xs:byte" name="Q2"/>
+      <xs:element type="xs:byte" name="Q3"/>
+      <xs:element type="xs:byte" name="Q4"/>
+      <xs:element type="xs:byte" name="Q5"/>
+      <xs:element type="xs:byte" name="Q6"/>
+      <xs:element type="xs:byte" name="Q7"/>
+      <xs:element type="xs:byte" name="Q8"/>
+      <xs:element type="xs:byte" name="Q9"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="MoodReportType">
+    <xs:sequence>
+      <xs:element type="PHQ-9Type" name="PHQ-9" 
+      minOccurs="0"/>
+      <xs:element type="NHSType" name="NHS" 
+      minOccurs="0"/>
+    </xs:sequence>
+    <xs:attribute type="xs:time" name="Time" 
+    use="required"/>
+  </xs:complexType>
+  <xs:complexType name="NHSType">
+    <xs:sequence>
+      <xs:element type="xs:byte" name="Q1"/>
+      <xs:element type="xs:byte" name="Q2"/>
+      <xs:element type="xs:byte" name="Q3"/>
+      <xs:element type="xs:byte" name="Q4"/>
+      <xs:element type="xs:byte" name="Q5"/>
+      <xs:element type="xs:byte" name="Q6"/>
+      <xs:element type="xs:byte" name="Q7"/>
+      <xs:element type="xs:byte" name="Q8"/>
+      <xs:element type="xs:byte" name="Q9"/>
+      <xs:element type="xs:byte" name="Q10"/>
+      <xs:element type="xs:byte" name="Q11"/>
+      <xs:element type="xs:byte" name="Q12"/>
+      <xs:element type="xs:byte" name="Q13"/>
+      <xs:element type="xs:byte" name="Q14"/>
+      <xs:element type="xs:byte" name="Q15"/>
+      <xs:element type="xs:byte" name="Q16"/>
+      <xs:element type="xs:byte" name="Q17"/>
+      <xs:element type="xs:byte" name="Q18"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SensingDataType">
+    <xs:sequence>
+      <xs:element type="xs:int" name="UserID"/>
+      <xs:element type="xs:string" name="AppKey"/>
+      <xs:element type="UserDetailsType" name="UserDetails"/>
+      <xs:element type="AppUsageType" name="AppUsage" 
+      maxOccurs="unbounded" minOccurs="0"/>
+      <xs:element type="GPSLogType" name="GPSLog" 
+      maxOccurs="unbounded" minOccurs="0"/>
+      <xs:element type="ActivityDetailsType" name="ActivityDetails"
+      maxOccurs="unbounded" minOccurs="0"/>
+      <xs:element type="PhoneDetailsType" name="PhoneDetails" 
+      maxOccurs="unbounded" minOccurs="0"/>
+      <xs:element type="CommunicationLogType" name="CommunicationLog" 
+      maxOccurs="unbounded" minOccurs="0"/>
+      <xs:element type="MoodReportType" name="MoodReport" 
+      maxOccurs="unbounded" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

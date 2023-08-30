@@ -1,0 +1,85 @@
+<xs:schema attributeFormDefault="unqualified" 
+elementFormDefault="qualified" 
+xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="SensingData" type="SensingDataType"/>
+  <xs:complexType name="AppUsageType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="PackageName" 
+        use="required"/>
+        <xs:attribute type="xs:string" name="AppName" 
+        use="required"/>
+        <xs:attribute type="xs:time" name="TimeOpened" 
+        use="required"/>
+        <xs:attribute type="xs:time" name="TimeClosed" 
+        use="required"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="GPSLogType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:time" name="Time" 
+        use="required"/>
+        <xs:attribute type="xs:float" name="lat" 
+        use="required"/>
+        <xs:attribute type="xs:float" name="lon" 
+        use="required"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="MoodReportType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:time" name="Time" 
+        use="required"/>
+        <xs:attribute type="xs:byte" name="Q1" 
+        use="optional"/>
+        <xs:attribute type="xs:byte" name="Q2" 
+        use="optional"/>
+        <xs:attribute type="xs:byte" name="Q3" 
+        use="optional"/>
+        <xs:attribute type="xs:byte" name="Q5" 
+        use="optional"/>
+        <xs:attribute type="xs:byte" name="Q6" 
+        use="optional"/>
+        <xs:attribute type="xs:byte" name="Q7" 
+        use="optional"/>
+        <xs:attribute type="xs:byte" name="Q8" 
+        use="optional"/>
+        <xs:attribute type="xs:byte" name="Q9" 
+        use="optional"/>
+        <xs:attribute type="xs:byte" name="Q10" 
+        use="optional"/>
+        <xs:attribute type="xs:byte" name="Q11" 
+        use="optional"/>
+        <xs:attribute type="xs:byte" name="Q12" 
+        use="optional"/>
+        <xs:attribute type="xs:byte" name="Q13" 
+        use="optional"/>
+        <xs:attribute type="xs:byte" name="Q14" 
+        use="optional"/>
+        <xs:attribute type="xs:byte" name="Q15" 
+        use="optional"/>
+        <xs:attribute type="xs:byte" name="Q16" 
+        use="optional"/>
+        <xs:attribute type="xs:byte" name="Q17" 
+        use="optional"/>
+        <xs:attribute type="xs:byte" name="Q18" 
+        use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="SensingDataType">
+    <xs:sequence>
+      <xs:element type="xs:int" name="UserID"/>
+      <xs:element type="xs:string" name="AppKey"/>
+      <xs:element type="AppUsageType" name="AppUsage" 
+      maxOccurs="unbounded" minOccurs="0"/>
+      <xs:element type="GPSLogType" name="GPSLog"
+      maxOccurs="unbounded" minOccurs="0"/>
+      <xs:element type="MoodReportType" name="MoodReport"
+      maxOccurs="unbounded" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

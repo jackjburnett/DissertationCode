@@ -1,0 +1,21 @@
+<xs:schema attributeFormDefault="unqualified" 
+elementFormDefault="qualified"
+xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="SensingData" type="SensingDataType"/>
+  <xs:complexType name="AppUsageType">
+    <xs:sequence>
+      <xs:element type="xs:string" name="PackageName"/>
+      <xs:element type="xs:string" name="AppName"/>
+      <xs:element type="xs:time" name="TimeOpened"/>
+      <xs:element type="xs:time" name="TimeClosed"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SensingDataType">
+    <xs:sequence>
+      <xs:element type="xs:int" name="UserID"/>
+      <xs:element type="xs:string" name="AppKey"/>
+      <xs:element type="AppUsageType" name="AppUsage" 
+      maxOccurs="unbounded" minOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>    
