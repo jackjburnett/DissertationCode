@@ -1,0 +1,731 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MoodSelfReport">
+
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Question 1 -->
+            <TextView
+                android:id="@+id/text_q1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="How often have you been bothered by feeling down, depressed or hopeless?" />
+
+            <!-- Radio Group for Question 1 -->
+            <RadioGroup
+                android:id="@+id/radioGroup_q1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RadioButton
+                    android:id="@+id/radio_q1_0"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Not at all" />
+
+                <RadioButton
+                    android:id="@+id/radio_q1_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Several days" />
+
+                <RadioButton
+                    android:id="@+id/radio_q1_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="More than half the days" />
+
+                <RadioButton
+                    android:id="@+id/radio_q1_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Nearly every day" />
+            </RadioGroup>
+
+            <!-- Question 2 -->
+            <TextView
+                android:id="@+id/text_q2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="How often have you had little interest or pleasure in doing things?" />
+
+            <!-- Radio Group for Question 2 -->
+            <RadioGroup
+                android:id="@+id/radioGroup_q2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RadioButton
+                    android:id="@+id/radio_q2_0"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Not at all" />
+
+                <RadioButton
+                    android:id="@+id/radio_q2_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Several days" />
+
+                <RadioButton
+                    android:id="@+id/radio_q2_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="More than half the days" />
+
+                <RadioButton
+                    android:id="@+id/radio_q2_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Nearly every day" />
+            </RadioGroup>
+
+            <!-- Question 3 -->
+            <TextView
+                android:id="@+id/text_q3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="How often have you been bothered by trouble falling or staying asleep, or sleeping too much?" />
+
+            <!-- Radio Group for Question 3 -->
+            <RadioGroup
+                android:id="@+id/radioGroup_q3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RadioButton
+                    android:id="@+id/radio_q3_0"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Not at all" />
+
+                <RadioButton
+                    android:id="@+id/radio_q3_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Several days" />
+
+                <RadioButton
+                    android:id="@+id/radio_q3_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="More than half the days" />
+
+                <RadioButton
+                    android:id="@+id/radio_q3_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Nearly every day" />
+            </RadioGroup>
+
+            <!-- Question 4 -->
+            <TextView
+                android:id="@+id/text_q4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="How often have you been bothered by feeling tired or having little energy?" />
+
+            <!-- Radio Group for Question 4 -->
+            <RadioGroup
+                android:id="@+id/radioGroup_q4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RadioButton
+                    android:id="@+id/radio_q4_0"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Not at all" />
+
+                <RadioButton
+                    android:id="@+id/radio_q4_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Several days" />
+
+                <RadioButton
+                    android:id="@+id/radio_q4_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="More than half the days" />
+
+                <RadioButton
+                    android:id="@+id/radio_q4_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Nearly every day" />
+            </RadioGroup>
+
+            <!-- Question 5 -->
+            <TextView
+                android:id="@+id/text_q5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="How often have you been bothered by poor appetite or overeating?" />
+
+            <!-- Radio Group for Question 5 -->
+            <RadioGroup
+                android:id="@+id/radioGroup_q5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RadioButton
+                    android:id="@+id/radio_q5_0"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Not at all" />
+
+                <RadioButton
+                    android:id="@+id/radio_q5_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Several days" />
+
+                <RadioButton
+                    android:id="@+id/radio_q5_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="More than half the days" />
+
+                <RadioButton
+                    android:id="@+id/radio_q5_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Nearly every day" />
+            </RadioGroup>
+
+            <!-- Question 6 -->
+            <TextView
+                android:id="@+id/text_q6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="How often have you been bothered by feeling bad about yourself, or that you are a failure, or have let yourself or your family down?" />
+
+            <!-- Radio Group for Question 6 -->
+            <RadioGroup
+                android:id="@+id/radioGroup_q6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RadioButton
+                    android:id="@+id/radio_q6_0"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Not at all" />
+
+                <RadioButton
+                    android:id="@+id/radio_q6_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Several days" />
+
+                <RadioButton
+                    android:id="@+id/radio_q6_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="More than half the days" />
+
+                <RadioButton
+                    android:id="@+id/radio_q6_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Nearly every day" />
+            </RadioGroup>
+
+            <!-- Question 7 -->
+            <TextView
+                android:id="@+id/text_q7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="How often have you been bothered by trouble concentrating on things, such as reading the newspaper or watching television?" />
+
+            <!-- Radio Group for Question 7 -->
+            <RadioGroup
+                android:id="@+id/radioGroup_q7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RadioButton
+                    android:id="@+id/radio_q7_0"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Not at all" />
+
+                <RadioButton
+                    android:id="@+id/radio_q7_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Several days" />
+
+                <RadioButton
+                    android:id="@+id/radio_q7_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="More than half the days" />
+
+                <RadioButton
+                    android:id="@+id/radio_q7_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Nearly every day" />
+            </RadioGroup>
+
+            <!-- Question 8 -->
+            <TextView
+                android:id="@+id/text_q8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="How often have you been bothered by moving or speaking so slowly that other people could have noticed, or the opposite - being so fidgety or restless that you have been moving around a lot more than usual?" />
+
+            <!-- Radio Group for Question 8 -->
+            <RadioGroup
+                android:id="@+id/radioGroup_q8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RadioButton
+                    android:id="@+id/radio_q8_0"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Not at all" />
+
+                <RadioButton
+                    android:id="@+id/radio_q8_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Several days" />
+
+                <RadioButton
+                    android:id="@+id/radio_q8_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="More than half the days" />
+
+                <RadioButton
+                    android:id="@+id/radio_q8_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Nearly every day" />
+            </RadioGroup>
+
+            <!-- Question 9 -->
+            <TextView
+                android:id="@+id/text_q9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Have you had an anxiety attack (suddenly feeling fear or panic)?" />
+
+            <!-- Radio Group for Question 9 -->
+            <RadioGroup
+                android:id="@+id/radioGroup_q9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RadioButton
+                    android:id="@+id/radio_q9_0"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Yes" />
+
+                <RadioButton
+                    android:id="@+id/radio_q9_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="No" />
+            </RadioGroup>
+
+            <!-- Question 10 -->
+            <TextView
+                android:id="@+id/text_q10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="How often have you been bothered by feeling nervous, anxious or on edge?" />
+
+            <!-- Radio Group for Question 10 -->
+            <RadioGroup
+                android:id="@+id/radioGroup_q10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RadioButton
+                    android:id="@+id/radio_q10_0"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Not at all" />
+
+                <RadioButton
+                    android:id="@+id/radio_q10_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Several days" />
+
+                <RadioButton
+                    android:id="@+id/radio_q10_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="More than half the days" />
+
+                <RadioButton
+                    android:id="@+id/radio_q10_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Nearly every day" />
+            </RadioGroup>
+
+            <!-- Question 11 -->
+            <TextView
+                android:id="@+id/text_q11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="How often have you been bothered by not being able to stop or control worrying?" />
+
+            <!-- Radio Group for Question 11 -->
+            <RadioGroup
+                android:id="@+id/radioGroup_q11"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RadioButton
+                    android:id="@+id/radio_q11_0"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Not at all" />
+
+                <RadioButton
+                    android:id="@+id/radio_q11_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Several days" />
+
+                <RadioButton
+                    android:id="@+id/radio_q11_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="More than half the days" />
+
+                <RadioButton
+                    android:id="@+id/radio_q11_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Nearly every day" />
+            </RadioGroup>
+
+            <!-- Question 12 -->
+            <TextView
+                android:id="@+id/text_q12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="How often have you been bothered by worrying too much about different things?" />
+
+            <!-- Radio Group for Question 12 -->
+            <RadioGroup
+                android:id="@+id/radioGroup_q12"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RadioButton
+                    android:id="@+id/radio_q12_0"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Not at all" />
+
+                <RadioButton
+                    android:id="@+id/radio_q12_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Several days" />
+
+                <RadioButton
+                    android:id="@+id/radio_q12_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="More than half the days" />
+
+                <RadioButton
+                    android:id="@+id/radio_q12_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Nearly every day" />
+            </RadioGroup>
+
+            <!-- Question 13 -->
+            <TextView
+                android:id="@+id/text_q13"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="How often have you been bothered by having trouble relaxing?" />
+
+            <!-- Radio Group for Question 13 -->
+            <RadioGroup
+                android:id="@+id/radioGroup_q13"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RadioButton
+                    android:id="@+id/radio_q13_0"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Not at all" />
+
+                <RadioButton
+                    android:id="@+id/radio_q13_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Several days" />
+
+                <RadioButton
+                    android:id="@+id/radio_q13_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="More than half the days" />
+
+                <RadioButton
+                    android:id="@+id/radio_q13_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Nearly every day" />
+            </RadioGroup>
+
+            <!-- Question 14 -->
+            <TextView
+                android:id="@+id/text_q14"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="How often have you been bothered by being so restless that it is hard to sit still?" />
+
+            <!-- Radio Group for Question 14 -->
+            <RadioGroup
+                android:id="@+id/radioGroup_q14"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RadioButton
+                    android:id="@+id/radio_q14_0"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Not at all" />
+
+                <RadioButton
+                    android:id="@+id/radio_q14_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Several days" />
+
+                <RadioButton
+                    android:id="@+id/radio_q14_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="More than half the days" />
+
+                <RadioButton
+                    android:id="@+id/radio_q14_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Nearly every day" />
+            </RadioGroup>
+
+            <!-- Question 15 -->
+            <TextView
+                android:id="@+id/text_q15"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="How often have you been bothered by becoming easily annoyed or irritable?" />
+
+            <!-- Radio Group for Question 15 -->
+            <RadioGroup
+                android:id="@+id/radioGroup_q15"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RadioButton
+                    android:id="@+id/radio_q15_0"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Not at all" />
+
+                <RadioButton
+                    android:id="@+id/radio_q15_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Several days" />
+
+                <RadioButton
+                    android:id="@+id/radio_q15_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="More than half the days" />
+
+                <RadioButton
+                    android:id="@+id/radio_q15_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Nearly every day" />
+            </RadioGroup>
+
+            <!-- Question 16 -->
+            <TextView
+                android:id="@+id/text_q16"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="How often have you been bothered by feeling afraid as if something awful might happen?" />
+
+            <!-- Radio Group for Question 16 -->
+            <RadioGroup
+                android:id="@+id/radioGroup_q16"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RadioButton
+                    android:id="@+id/radio_q16_0"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Not at all" />
+
+                <RadioButton
+                    android:id="@+id/radio_q16_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Several days" />
+
+                <RadioButton
+                    android:id="@+id/radio_q16_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="More than half the days" />
+
+                <RadioButton
+                    android:id="@+id/radio_q16_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Nearly every day" />
+            </RadioGroup>
+
+            <!-- Question 17 -->
+            <TextView
+                android:id="@+id/text_q17"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Have you been bothered by worrying about any of the following?" />
+
+            <!-- Checkboxes for Question 17 -->
+            <CheckBox
+                android:id="@+id/check_q17_0"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Your health" />
+
+            <CheckBox
+                android:id="@+id/check_q17_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Your weight or how you look" />
+
+            <CheckBox
+                android:id="@+id/check_q17_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Little or no sexual desire or pleasure during sex" />
+
+            <CheckBox
+                android:id="@+id/check_q17_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Difficulties with your partner" />
+
+            <CheckBox
+                android:id="@+id/check_q17_4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="The stress of taking care of family members" />
+
+            <CheckBox
+                android:id="@+id/check_q17_5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Stress at work, school or outside home" />
+
+            <CheckBox
+                android:id="@+id/check_q17_6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="By financial problems or worries" />
+
+            <CheckBox
+                android:id="@+id/check_q17_7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Having no one to turn to" />
+
+            <CheckBox
+                android:id="@+id/check_q17_8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Something bad that happened recently" />
+
+            <CheckBox
+                android:id="@+id/check_q17_9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="None of the above" />
+
+            <!-- Question 18 -->
+            <TextView
+                android:id="@+id/text_q18"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="If this questionnaire has highlighted any problems, how difficult have these problems made it for you to do your work, take care of things at home, or get along with other people?" />
+
+            <!-- Radio Group for Question 18 -->
+            <RadioGroup
+                android:id="@+id/radioGroup_q18"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RadioButton
+                    android:id="@+id/radio_q18_0"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Not difficult at all" />
+
+                <RadioButton
+                    android:id="@+id/radio_q18_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Somewhat difficult" />
+
+                <RadioButton
+                    android:id="@+id/radio_q18_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Very difficult" />
+
+                <RadioButton
+                    android:id="@+id/radio_q18_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Extremely difficult" />
+            </RadioGroup>
+
+            <!-- Submit Button -->
+            <Button
+                android:id="@+id/buttonSubmit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Submit" />
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

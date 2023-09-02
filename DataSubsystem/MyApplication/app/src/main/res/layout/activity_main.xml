@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/buttonSendStats"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Upload Usage Statistics"
+        android:layout_gravity="center" />
+
+    <Button
+        android:id="@+id/buttonCheckUserID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Check User ID"
+        android:layout_gravity="center" />
+
+    <Button
+        android:id="@+id/buttonSetUserID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Set User ID"
+        android:layout_gravity="center"
+        android:visibility="gone" />
+
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter your UserID"
+        android:inputType="text"
+        android:visibility="gone" />
+
+    <Button
+        android:id="@+id/buttonMoodSelfReport"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Mood Self-Report"
+        android:layout_gravity="center" />
+
+    <TextView
+        android:id="@+id/textViewStats"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:layout_gravity="center" />
+</LinearLayout>
