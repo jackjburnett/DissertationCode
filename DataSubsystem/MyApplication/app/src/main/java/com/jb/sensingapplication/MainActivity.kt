@@ -32,6 +32,7 @@ class MainActivity : AppCompatActivity() {
 
     // The function that runs when the application opens
     override fun onCreate(savedInstanceState: Bundle?) {
+        Log.i("AppKey", Settings.Secure.getString(this.contentResolver, Settings.Secure.ANDROID_ID))
         val sharedPreferences = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE)
         super.onCreate(savedInstanceState)
 
@@ -58,14 +59,7 @@ class MainActivity : AppCompatActivity() {
             val appKey = Settings.Secure.getString(this.contentResolver, Settings.Secure.ANDROID_ID)
             val userID = sharedPreferences.getString("UserID", "No user ID").toString()
 
-            if(appKey==getAppKey(userID.toString())){
-                //sendUsageStatistics(apiclient, userID)
-                //sendGPSLog(apiclient, userID)
-                sendMoodReport(apiclient, reportResult.toString(), userID)
-                binding.textViewStats.text="Usage Sent"
-            }else{
-                binding.textViewStats.text="Incorrect user ID for linked device"
-            }
+            getAppKey(apiclient, reportResult.toString(), userID)
         }
 
         //adds an onclick that opens the Mood-Self Report activity
@@ -96,8 +90,37 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun getAppKey(userID: String): String {
-        return Settings.Secure.getString(this.contentResolver, Settings.Secure.ANDROID_ID)
+    private fun getAppKey(apiclient: SensingAPI, reportResult: String, userID: String){
+        binding.textViewStats.text="Attempting Connection"
+        var result=""
+        apiclient.getUserDetails(userID.toInt()).enqueue(object : Callback<UserDetails> {
+            override fun onResponse(call: Call<UserDetails>, response: Response<UserDetails>) {
+                // handle the response
+                if(response.isSuccessful){
+                    Log.i("Log", response.body().toString())
+                    result= response.body()!!.appkey.toString()
+                    Log.i("Log",result)
+                    sendAll(apiclient, reportResult.toString(), userID)
+                }else{
+                    Log.i("Log", response.body().toString())
+                    binding.textViewStats.text="Incorrect User ID for linked device"
+                }
+            }
+            override fun onFailure(call: Call<UserDetails>, t: Throwable) {
+                // handle the failure
+                binding.textViewStats.text="Connection Issue"
+                Log.i("Log","Failure")
+                result="Invalid Key"
+            }
+        })
+        Log.i("Log Result",result)
+    }
+
+    public fun sendAll(apiclient: SensingAPI, reportResult: String, userID: String) {
+        sendUsageStatistics(apiclient, userID)
+        sendGPSLog(apiclient, userID)
+        sendMoodReport(apiclient, reportResult.toString(), userID)
+        binding.textViewStats.text="Usage Sending"
     }
 
     private fun sendMoodReport(apiclient: SensingAPI, reportResult: String,  userID: String) {
@@ -137,6 +160,7 @@ class MainActivity : AppCompatActivity() {
                 }
             })
         }
+        binding.textViewStats.text="Usage Sent"
     }
 
     private fun sendGPSLog(apiclient: SensingAPI, userID: String) {
